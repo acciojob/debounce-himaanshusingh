@@ -12,21 +12,17 @@
       <button>Submit</button>
     </form>
     <script>
-      const form = document.querySelector("form");
-      const btn = document.querySelector("button");
+      document.body.addEventListener("click", debounce(console.log, 3000));
 
-      form.addEventListener("submit", debounce(callback, delay));
-
-      function debounce(callback, delay, immediate = false) {
+      function debounce(callback, delay) {
         let timeoutId;
-        return callback;
-      }
-
-      function debounced() {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(function () {
-          display();
-        }, delay);
+        let currentTime = 0;
+        return function debounced(currentTime) {
+          if (timeoutId) clearTimeout(timeoutId);
+          timeoutId = setTimeout(function () {
+            callback(delay);
+          }, delay);
+        };
       }
     </script>
   </body>
