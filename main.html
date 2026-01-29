@@ -11,19 +11,6 @@
       <input type="text" />
       <button>Submit</button>
     </form>
-    <script>
-      document.body.addEventListener("click", debounce(console.log, 3000));
-
-      function debounce(callback, delay) {
-        let timeoutId;
-        let currentTime = 0;
-        return function debounced(currentTime) {
-          if (timeoutId) clearTimeout(timeoutId);
-          timeoutId = setTimeout(function () {
-            callback(delay);
-          }, delay);
-        };
-      }
-    </script>
+	<script src="./script.js"></script>
   </body>
 </html>
