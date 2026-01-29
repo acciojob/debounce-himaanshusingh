@@ -15,14 +15,14 @@
       const form = document.querySelector("form");
       const btn = document.querySelector("button");
 
-      form.addEventListener("submit", debounce());
+      form.addEventListener("submit", debounce(callback, delay));
 
       function debounce(callback, delay, immediate = false) {
         let timeoutId;
         return callback;
       }
 
-      function callback() {
+      function debounced() {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(function () {
           display();
