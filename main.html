@@ -1,16 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form>
+      <input type="text" />
+      <button>Submit</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      const btn = document.querySelector("button");
 
-<html>
+      form.addEventListener("submit", debounce());
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+      function debounce(callback, delay, immediate = false) {
+        let timeoutId;
+        return callback;
+      }
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
+      function callback() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function () {
+          display();
+        }, delay);
+      }
+    </script>
+  </body>
 </html>
